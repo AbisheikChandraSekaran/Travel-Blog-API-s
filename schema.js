@@ -5,17 +5,25 @@ const travelBlogSchema=new mongoose.Schema({
         type:String
     },
     subtitle:{
-        type:String
+        type:String,
+        require:true
     },
     writer:{
-        type:String},
-    /*image:{
-        type:image
-    }*/
+        type:String
+    },
+    image:{
+        type:String,
+        require:true
+    },
     content:{
         type:String
         
+    },
+    map:{
+        type:String,
+        require:true
     }
+
 })
 
 const Blog = mongoose.model("travelblogdetails",travelBlogSchema)

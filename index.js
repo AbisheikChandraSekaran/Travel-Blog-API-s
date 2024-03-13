@@ -34,9 +34,11 @@ app.post('/add-blog',async function(request,response){
     try{
     await Blog.create({
        "title" :request.body.title,
-        "subtitle:": request.body.subtitle,
+        "subtitle": request.body.subtitle,
         "writer":request.body.writer,
-        "content":request.body.content
+        "content":request.body.content,
+        "image":request.body.image,
+        "map":request.body.map
 
         })
         response.status(201).json(
@@ -105,9 +107,11 @@ app.post('/add-blog',async function(request,response){
         if(blogEntry){
             await blogEntry.updateOne({
                 "title" :request.body.title,
-                "subtitle:": request.body.subtitle,
-                 "writer":request.body.writer,
-                 "content":request.body.content
+        "subtitle": request.body.subtitle,
+        "writer":request.body.writer,
+        "content":request.body.content,
+        "image":request.body.image,
+        "map":request.body.map
             }) 
             response.status(200).json({
                 'status': "success",

@@ -77,7 +77,7 @@ app.post('/add-blog',async function(request,response){
     app.get('/get-blogdata/:id',async function(request,response){
         const blogId = request.params.id;
         try {
-            const blogDetails = await Blog.findBYId(blogId)
+            const blogDetails = await Blog.findById(blogId)
             if(!blogDetails) {
                 return response.status(404).json({
                     status: "failure",

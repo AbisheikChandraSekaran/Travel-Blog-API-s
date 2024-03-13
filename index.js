@@ -72,7 +72,30 @@ app.post('/add-blog',async function(request,response){
             
         }
         
-    })                          //mvc pattern
+    })              
+    
+    app.get('/get-blogdata/:id',async function(request,response){
+        try {
+            const blogDetails = await Blog.find()
+            response.status(200).json(blogDetails)
+       } 
+        
+        catch (error) {
+            response.status(500).json({
+                "status":"failure",
+                "message":"Could Not fetch Data",
+                "error":error
+            })
+            
+        }
+        
+    })  
+    
+    
+    
+    
+    
+    //mvc pattern
 
     app.delete('/delete-blog/:id',async function(request,response){
         try{
